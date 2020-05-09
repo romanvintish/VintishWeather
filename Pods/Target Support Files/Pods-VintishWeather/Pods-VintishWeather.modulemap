@@ -1,0 +1,6 @@
+framework module Pods_VintishWeather {
+  umbrella header "Pods-VintishWeather-umbrella.h"
+
+  export *
+  module * { export * }
+}

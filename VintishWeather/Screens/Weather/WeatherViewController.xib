@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherViewController" customModule="VintishYalantisWeather">
+            <connections>
+                <outlet property="chartBackgroundView" destination="9rb-K7-qSB" id="edc-IN-e3W"/>
+                <outlet property="chartContainerView" destination="Yjz-3c-wej" id="mJ1-lj-ZEB"/>
+                <outlet property="chartView" destination="YJ1-Ss-QYn" id="CfA-An-1IW"/>
+                <outlet property="daysCollectionView" destination="i9K-yT-lZG" id="nKZ-y8-weB"/>
+                <outlet property="modesSegmentControl" destination="Rje-8C-cAl" id="I9I-fV-Wu5"/>
+                <outlet property="titleLabel" destination="rK9-SN-tdj" id="wH0-zd-B4h"/>
+                <outlet property="view" destination="iN0-l3-epB" id="5p5-hD-fFt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Q5-g2-gdc">
+                    <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK9-SN-tdj">
+                            <rect key="frame" x="10" y="30" width="355" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="XCU-P5-tQH">
+                            <rect key="frame" x="0.0" y="80.333333333333314" width="375" height="591"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rje-8C-cAl">
+                                    <rect key="frame" x="146" y="0.0" width="83" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="31" id="7Wy-10-TS8"/>
+                                    </constraints>
+                                    <segments>
+                                        <segment title="1"/>
+                                        <segment title="2"/>
+                                        <segment title="3"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="modesSegmentControlChangeValue:" destination="-1" eventType="valueChanged" id="LE0-lz-e4f"/>
+                                    </connections>
+                                </segmentedControl>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="i9K-yT-lZG">
+                                    <rect key="frame" x="0.0" y="61" width="375" height="250"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="250" id="RbL-fw-EkC"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tv4-ah-FJ5">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yjz-3c-wej">
+                                    <rect key="frame" x="20" y="341" width="335" height="250"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rb-K7-qSB" customClass="PeaksChartBackgroundView" customModule="VintishWeather" customModuleProvider="target">
+                                            <rect key="frame" x="40" y="40" width="255" height="170"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJ1-Ss-QYn" customClass="PeaksChartView" customModule="VintishWeather" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="250"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="YJ1-Ss-QYn" firstAttribute="top" secondItem="Yjz-3c-wej" secondAttribute="top" id="0Rm-HY-cFZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="YJ1-Ss-QYn" secondAttribute="bottom" id="3TL-S1-q2S"/>
+                                        <constraint firstItem="9rb-K7-qSB" firstAttribute="leading" secondItem="Yjz-3c-wej" secondAttribute="leading" constant="40" id="7Rk-GP-YQL"/>
+                                        <constraint firstAttribute="trailing" secondItem="9rb-K7-qSB" secondAttribute="trailing" constant="40" id="Ojt-h5-zy6"/>
+                                        <constraint firstItem="YJ1-Ss-QYn" firstAttribute="leading" secondItem="Yjz-3c-wej" secondAttribute="leading" id="VUm-Pc-emr"/>
+                                        <constraint firstItem="9rb-K7-qSB" firstAttribute="top" secondItem="Yjz-3c-wej" secondAttribute="top" constant="40" id="ctk-Cq-SKh"/>
+                                        <constraint firstAttribute="bottom" secondItem="9rb-K7-qSB" secondAttribute="bottom" constant="40" id="fqA-8t-Wgz"/>
+                                        <constraint firstAttribute="height" constant="250" id="oz2-p6-5Mx"/>
+                                        <constraint firstAttribute="trailing" secondItem="YJ1-Ss-QYn" secondAttribute="trailing" id="vSP-qo-oxo"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="i9K-yT-lZG" firstAttribute="width" secondItem="XCU-P5-tQH" secondAttribute="width" id="DkI-Ot-vFB"/>
+                                <constraint firstItem="Yjz-3c-wej" firstAttribute="width" secondItem="XCU-P5-tQH" secondAttribute="width" constant="-40" id="wjg-aW-CgN"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="XCU-P5-tQH" firstAttribute="leading" secondItem="7Q5-g2-gdc" secondAttribute="leading" id="6T4-j0-c2g"/>
+                        <constraint firstItem="rK9-SN-tdj" firstAttribute="centerX" secondItem="7Q5-g2-gdc" secondAttribute="centerX" id="9f0-hu-hZo"/>
+                        <constraint firstAttribute="trailing" secondItem="rK9-SN-tdj" secondAttribute="trailing" constant="10" id="CUh-W9-YEF"/>
+                        <constraint firstItem="rK9-SN-tdj" firstAttribute="leading" secondItem="7Q5-g2-gdc" secondAttribute="leading" constant="10" id="ajQ-tC-VNe"/>
+                        <constraint firstAttribute="trailing" secondItem="XCU-P5-tQH" secondAttribute="trailing" id="c1h-iX-wCQ"/>
+                        <constraint firstItem="rK9-SN-tdj" firstAttribute="top" secondItem="7Q5-g2-gdc" secondAttribute="top" constant="30" id="eUt-P3-tfl"/>
+                        <constraint firstAttribute="bottom" secondItem="XCU-P5-tQH" secondAttribute="bottom" constant="30" id="lCq-Ah-ha9"/>
+                        <constraint firstItem="XCU-P5-tQH" firstAttribute="top" secondItem="rK9-SN-tdj" secondAttribute="bottom" constant="30" id="x8N-e6-dJ9"/>
+                        <constraint firstItem="XCU-P5-tQH" firstAttribute="centerX" secondItem="7Q5-g2-gdc" secondAttribute="centerX" id="yCk-4Z-zms"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="7Q5-g2-gdc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="2pH-Rx-Baf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="7Q5-g2-gdc" secondAttribute="bottom" id="DcY-uf-cmH"/>
+                <constraint firstItem="7Q5-g2-gdc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NR4-QH-VEI"/>
+                <constraint firstAttribute="trailing" secondItem="7Q5-g2-gdc" secondAttribute="trailing" id="l93-Cb-3o3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-249.27536231884059" y="291.96428571428572"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherViewController" customModule="VintishYalantisWeather">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="5p5-hD-fFt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="XCU-P5-tQH">
+                    <rect key="frame" x="0.0" y="74" width="414" height="758"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rje-8C-cAl">
+                            <rect key="frame" x="86" y="0.0" width="242" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="31" id="7Wy-10-TS8"/>
+                            </constraints>
+                            <segments>
+                                <segment title="One week"/>
+                                <segment title="Two week"/>
+                                <segment title="Month"/>
+                            </segments>
+                        </segmentedControl>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="i9K-yT-lZG">
+                            <rect key="frame" x="0.0" y="244.5" width="414" height="150"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="RbL-fw-EkC"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tv4-ah-FJ5">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yjz-3c-wej">
+                            <rect key="frame" x="0.0" y="608" width="414" height="150"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="oz2-p6-5Mx"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="i9K-yT-lZG" firstAttribute="width" secondItem="XCU-P5-tQH" secondAttribute="width" id="DkI-Ot-vFB"/>
+                        <constraint firstItem="Yjz-3c-wej" firstAttribute="width" secondItem="XCU-P5-tQH" secondAttribute="width" id="wjg-aW-CgN"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="XCU-P5-tQH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="34u-t2-wNq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XCU-P5-tQH" secondAttribute="trailing" id="8bN-DU-gic"/>
+                <constraint firstItem="XCU-P5-tQH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ri9-ap-AKG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="XCU-P5-tQH" secondAttribute="bottom" constant="30" id="qKR-ZW-p1p"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-248" y="292"/>
+        </view>
+    </objects>
+</document>
